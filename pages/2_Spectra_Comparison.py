@@ -86,16 +86,30 @@ if not selected_labels:
     st.info(t("no_selection", lang))
     st.stop()
 
+# Distinct color palette — visible on both dark background and white PNG export
+COLORS = [
+    "#2ecc71", "#e74c3c", "#3498db", "#f39c12",
+    "#9b59b6", "#1abc9c", "#e67e22", "#e91e63",
+    "#00bcd4", "#cddc39", "#ff5722", "#607d8b"
+]
+
+spectra_data = {}
+
 fig = go.Figure()
-for label in selected_labels:
+for i, label in enumerate(selected_labels):
     folder_path, stem = all_options[label]
     spectra_path = os.path.join(folder_path, "mean_spectrums", stem + "_spectra.npy")
     if os.path.exists(spectra_path):
         spectra = np.load(spectra_path)
+        spectra_data[label] = spectra
         fig.add_trace(go.Scatter(
-            x=WAVELENGTHS[:len(spectra)], y=spectra,
-            mode="lines", name=label, line=dict(width=2)
+            x=WAVELENGTHS[:len(spectra)],
+            y=spectra,
+            mode="lines",
+            name=label,
+            line=dict(width=2.5, color=COLORS[i % len(COLORS)])  # ← explicit color
         ))
+
 
 fig.update_layout(
     xaxis_title=t("wavelength", lang),
@@ -107,3 +121,53 @@ fig.update_layout(
     legend=dict(bgcolor="#0e1117")
 )
 st.plotly_chart(fig, use_container_width=True)
+
+st.markdown("---")
+st.subheader("⬇️ Download Chart" if lang == "en" else "⬇️ チャートをダウンロード")
+
+# ── Custom filename input ─────────────────────────────────────────────────────
+col_name, col_btn = st.columns([2, 1])
+
+with col_name:
+    custom_name = st.text_input(
+        "File name (without extension)" if lang == "en" else "ファイル名（拡張子不要）",
+        placeholder="e.g. satoki_vs_nagamine" if lang == "en" else "例：志1_vs_里木2"
+    )
+
+# ── Build default non-duplicate name from selected scan labels ────────────────
+def build_default_name(selected_labels, existing_names):
+    short_names = []
+    for label in selected_labels:
+        part = label.split("›")[-1].strip()
+        short_names.append(part.split()[0])
+    base = "_vs_".join(short_names)
+
+    # Ensure non-duplicate within the session
+    if base not in existing_names:
+        return base
+    counter = 1
+    while f"{base}_{counter}" in existing_names:
+        counter += 1
+    return f"{base}_{counter}"
+
+# Track used names in session to avoid duplicates
+if "used_chart_names" not in st.session_state:
+    st.session_state.used_chart_names = set()
+
+final_name = custom_name.strip() if custom_name.strip() else build_default_name(
+    selected_labels,
+    st.session_state.used_chart_names
+)
+
+with col_btn:
+    st.write("")  
+    st.write("")  
+    img_bytes = fig.to_image(format="png", width=1200, height=500, scale=2)
+    if st.download_button(
+        label="⬇️ Download PNG" if lang == "en" else "⬇️ PNG保存",
+        data=img_bytes,
+        file_name=f"{final_name}.png",
+        mime="image/png"
+    ):
+        st.session_state.used_chart_names.add(final_name)
+        st.toast(f"Saved as {final_name}.png ✅")

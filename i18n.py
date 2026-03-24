@@ -1,0 +1,45 @@
+STRINGS = {
+    "en": {
+        "app_title":         "Hyperspectral Viewer",
+        "language":          "🌐 Language",
+        "file_browser":      "File Browser",
+        "spectra_comparison":"Spectra Comparison",
+        "rgb_gallery":       "RGB Gallery",
+        "select_folder":     "Select Folder",
+        "select_file":       "Select File",
+        "no_folders":        "No processed folders found. Run process.py first.",
+        "no_files":          "No files found in this folder.",
+        "rgb_image":         "RGB Composite",
+        "mean_spectra":      "Mean Spectra",
+        "wavelength":        "Wavelength (nm)",
+        "band_index":        "Band Index",
+        "reflectance":       "Reflectance",
+        "select_files":      "Select files to compare",
+        "no_selection":      "Select at least one file to plot.",
+        "all_rgb":           "All RGB Composites",
+        "folder_label":      "Folder",
+    },
+    "ja": {
+        "app_title":         "ハイパースペクトルビューア",
+        "language":          "🌐 言語",
+        "file_browser":      "ファイルブラウザ",
+        "spectra_comparison":"スペクトル比較",
+        "rgb_gallery":       "RGBギャラリー",
+        "select_folder":     "フォルダを選択",
+        "select_file":       "ファイルを選択",
+        "no_folders":        "処理済みフォルダが見つかりません。process.pyを実行してください。",
+        "no_files":          "このフォルダにファイルがありません。",
+        "rgb_image":         "RGBコンポジット",
+        "mean_spectra":      "平均スペクトル",
+        "wavelength":        "波長 (nm)",
+        "band_index":        "バンドインデックス",
+        "reflectance":       "反射率",
+        "select_files":      "比較するファイルを選択",
+        "no_selection":      "少なくとも1つのファイルを選択してください。",
+        "all_rgb":           "全RGBコンポジット",
+        "folder_label":      "フォルダ",
+    }
+}
+
+def t(key: str, lang: str) -> str:
+    return STRINGS.get(lang, STRINGS["en"]).get(key, key)

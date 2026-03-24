@@ -1,0 +1,86 @@
+{
+  "gain_20_kido_20_shibori全開_白紙": {
+    "ja": "gain_20_kido_20_shibori全開_白紙",
+    "en": "reference_paper",
+    "display_en": "Reference Paper",
+    "display_ja": "白紙"
+  },
+  "gain_20_kido_20_shibori全開_志1": {
+    "ja": "gain_20_kido_20_shibori全開_志1",
+    "en": "kokorozashi_1",
+    "display_en": "Kokorozashi 1",
+    "display_ja": "志1"
+  },
+  "gain_20_kido_20_shibori全開_志3": {
+    "ja": "gain_20_kido_20_shibori全開_志3",
+    "en": "kokorozashi_3",
+    "display_en": "Kokorozashi 3",
+    "display_ja": "志3"
+  },
+  "gain_20_kido_20_shibori全開_志2": {
+    "ja": "gain_20_kido_20_shibori全開_志2",
+    "en": "kokorozashi_2",
+    "display_en": "Kokorozashi 2",
+    "display_ja": "志2"
+  },
+  "gain_20_kido_20_shibori全開_志5": {
+    "ja": "gain_20_kido_20_shibori全開_志5",
+    "en": "kokorozashi_5",
+    "display_en": "Kokorozashi 5",
+    "display_ja": "志5"
+  },
+  "gain_20_kido_20_shibori全開_志4": {
+    "ja": "gain_20_kido_20_shibori全開_志4",
+    "en": "kokorozashi_4",
+    "display_en": "Kokorozashi 4",
+    "display_ja": "志4"
+  },
+  "gain_20_kido_20_shibori全開_白板": {
+    "ja": "gain_20_kido_20_shibori全開_白板",
+    "en": "reference_board",
+    "display_en": "Reference Board",
+    "display_ja": "白板"
+  },
+  "gain_20_kido_20_shibori全開_里木2": {
+    "ja": "gain_20_kido_20_shibori全開_里木2",
+    "en": "satoki_2",
+    "display_en": "Satoki 2",
+    "display_ja": "里木2"
+  },
+  "gain_20_kido_20_shibori全開_unknown": {
+    "ja": "gain_20_kido_20_shibori全開_unknown",
+    "en": "unknown",
+    "display_en": "Unknown",
+    "display_ja": "unknown"
+  },
+  "gain_20_kido_20_shibori全開_？峰": {
+    "ja": "gain_20_kido_20_shibori全開_？峰",
+    "en": "?_peak",
+    "display_en": "? Peak",
+    "display_ja": "?峰"
+  },
+  "gain_20_kido_20_shibori全開_長峰WCS": {
+    "ja": "gain_20_kido_20_shibori全開_長峰WCS",
+    "en": "nagamine_wcs",
+    "display_en": "Nagamine Wcs",
+    "display_ja": "長峰WCS"
+  },
+  "gain_20_kido_20_shibori全開_里木堀下": {
+    "ja": "gain_20_kido_20_shibori全開_里木堀下",
+    "en": "satoki_horishita",
+    "display_en": "Satoki Horishita",
+    "display_ja": "里木堀下"
+  },
+  "gain_20_kido_20_shibori全開_志の？": {
+    "ja": "gain_20_kido_20_shibori全開_志の？",
+    "en": "kokorozashi?",
+    "display_en": "kokorozashi?",
+    "display_ja": "志の?"
+  },
+  "gain_20_kido_20_shibori全開_立花指標用": {
+    "ja": "gain_20_kido_20_shibori全開_立花指標用",
+    "en": "for_tachibana_index",
+    "display_en": "For Tachibana Index",
+    "display_ja": "立花指標用"
+  }
+}

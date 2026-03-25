@@ -6,7 +6,7 @@ from deep_translator import GoogleTranslator
 # ── CONFIG ──────────────────────────────────────────────────────────────────
 ANALYSIS_SPACE = "."   # run setup.py from inside JA八女_土壌分析/
 REGISTRY_FILE  = "name_registry.json"
-SUBFOLDERS = ["raw", "references", "processed", "rgb_composites", "mean_spectrums"]
+SUBFOLDERS = ["raw", "references", "processed", "rgb_composites", "mean_spectrums", "masks"]
 HSD_EXT        = ".hsd"
 
 # ── STEP 1: Scan for data folders ───────────────────────────────────────────
